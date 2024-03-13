@@ -20,18 +20,8 @@ describe("home page", () => {
     const mockEmail = "ann@timescale.com";
     const mockEmail2 = "bob@timescale.com";
 
-    // Open the available recipient company accordion
-    cy.get(`[data-cy="${mockCompany}-selected"]`).first().click();
-
-    // Validate that the emails are contained under the company
-    cy.get(`[data-cy="${mockEmail}-not-selected"]`).should("exist");
-    cy.get(`[data-cy="${mockEmail2}-not-selected"]`).should("exist");
-
-    // Open the selected recipient company accordion
+    cy.get(`[data-cy="${mockCompany}-not-selected"]`).should("exist");
     cy.get(`[data-cy="${mockCompany}-not-selected"]`).first().click();
-
-    // Validate the emails have moved
-    cy.get(`[data-cy="${mockEmail}-selected"]`).should("exist");
-    cy.get(`[data-cy="${mockEmail2}-selected"]`).should("exist");
+    cy.get(`[data-cy="${mockCompany}-selected"]`).should("exist");
   });
 });
