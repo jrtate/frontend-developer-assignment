@@ -17,8 +17,6 @@ describe("home page", () => {
 
   it("moves all company's recipients when company is clicked", () => {
     const mockCompany = "timescale.com";
-    const mockEmail = "ann@timescale.com";
-    const mockEmail2 = "bob@timescale.com";
 
     cy.get(`[data-cy="${mockCompany}-not-selected"]`).should("exist");
     cy.get(`[data-cy="${mockCompany}-not-selected"]`).first().click();
